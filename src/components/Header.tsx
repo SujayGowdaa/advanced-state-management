@@ -11,13 +11,15 @@ export default function Header() {
   // ⚠️ “Hey, this might be null—you need to handle that!”
   // adding ! (non-null assertion operator) after hook means we telling to TS: Trust me, this is not null at runtime. or to avoid using this apply a if check and check it the value is not null and use the value.
 
-  const { isRunning } = useTimerContext();
+  const { isRunning, startTimer, stopTimer } = useTimerContext();
 
   return (
     <header>
       <h1>ReactTimer</h1>
 
-      <Button>{isRunning ? 'Stop' : 'Start'} Timers</Button>
+      <Button onClick={isRunning ? stopTimer : startTimer}>
+        {isRunning ? 'Stop' : 'Start'} Timers
+      </Button>
     </header>
   );
 }
