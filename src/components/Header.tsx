@@ -1,5 +1,5 @@
 import Button from './UI/Button.tsx';
-import { useTimerContext } from '../store/timers-context.tsx';
+import { useTimerContext } from '../context/timers-context.tsx';
 
 export default function Header() {
   // But when you created the context, you likely did this:
